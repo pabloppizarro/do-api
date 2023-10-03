@@ -9,31 +9,19 @@
     <h1>Web socket example</h1>
     <h2 id="clients"></h2>
     <p>blog.pachu.dev</p>
-
-    <button id="new">Connect to webSocket</button>
   </body>
   <script>
-    const btnNew = document.getElementById("new");
-    btnNew.addEventListener("click", (event) => {
-      connect();
-    });
     const clients = document.querySelector("#clients");
     const connected = [];
     let ws;
     const proto = window.location.protocol === "https:" ? "wss" : "ws";
-    // ws = new WebSocket(`${proto}://${window.location.host}`);
 
-    // ws.onmessage = (event) => {
-    //   console.log(event.data);
-    // };
-    function connect() {
-      ws = new WebSocket(`${proto}://${window.location.host}`);
+    ws = new WebSocket(`${proto}://${window.location.host}`);
 
-      ws.onmessage = (event) => {
-        console.log("onmessage:", event.data);
-      };
-      connected.push(ws);
-      clients.textContent = `Clients connected: ${connected.length}`;
-    }
+    ws.onmessage = (event) => {
+      console.log("onmessage:", event.data);
+    };
+    connected.push(ws);
+    clients.textContent = `Clients connected: ${connected.length}`;
   </script>
 </html>
