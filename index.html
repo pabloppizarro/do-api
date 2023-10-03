@@ -15,7 +15,7 @@
     let ws;
     const proto = window.location.protocol === "https:" ? "wss" : "ws";
 
-    ws = new WebSocket(`wss://${window.location.host}/`);
+    ws = new WebSocket(`${proto}://${window.location.host}:3000/`);
 
     ws.onmessage = (event) => {
       console.log("onmessage:", event.data);
