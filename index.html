@@ -12,7 +12,6 @@
   </body>
   <script>
     const clients = document.querySelector("#clients");
-    const connected = [];
     let ws;
     const proto = window.location.protocol === "https:" ? "wss" : "ws";
 
@@ -20,8 +19,7 @@
 
     ws.onmessage = (event) => {
       console.log("onmessage:", event.data);
+      clients.textContent = `message: ${event.data}`;
     };
-    connected.push(ws);
-    clients.textContent = `Clients connected: ${connected.length}`;
   </script>
 </html>
