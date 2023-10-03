@@ -1,6 +1,5 @@
 const express = require("express");
 const server = require("http").createServer();
-
 const app = express();
 
 app.get("/", function (req, res) {
