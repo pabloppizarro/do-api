@@ -2,8 +2,26 @@ const express = require("express");
 const server = require("http").createServer();
 const app = express();
 
+const swaggerUi = require("swagger-ui-express");
+const swaggerDocument = require("./swagger.json");
+var options = {
+  explorer: true,
+};
+
+app.use(
+  "/api-docs",
+  swaggerUi.serve,
+  swaggerUi.setup(swaggerDocument, options)
+);
+
 app.get("/", function (req, res) {
   res.sendFile("index.html", { root: __dirname });
+});
+
+app.get("/me", function (req, res) {
+  res.send({
+    name: "Pablo Pizarro",
+  });
 });
 
 server.on("request", app);
