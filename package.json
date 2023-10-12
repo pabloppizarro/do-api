@@ -2,14 +2,16 @@
   "name": "fsfe",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
+  "main": "index-ws.js",
   "scripts": {
+    "dev": "node --watch ./server/index-ws.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "express": "^4.18.2",
+    "morgan": "^1.10.0",
     "sqlite3": "^5.1.6",
     "swagger-ui-express": "^5.0.0",
     "ws": "^8.14.2"

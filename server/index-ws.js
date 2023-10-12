@@ -1,21 +1,25 @@
 const express = require("express");
 const server = require("http").createServer();
-const app = express();
+const morgan = require("morgan");
 
 const swaggerUi = require("swagger-ui-express");
-const swaggerDocument = require("./swagger.json");
+const swaggerDocument = require("../swagger.json");
+
 var options = {
   explorer: true,
 };
+//init server
+const app = express();
+//init morgan logger
+app.use(morgan("dev"));
 
-app.use(
-  "/api-docs",
-  swaggerUi.serve,
-  swaggerUi.setup(swaggerDocument, options)
-);
+//init swagger documentation.
+app.use("/docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument, options));
 
+//handle client
 app.get("/", function (req, res) {
-  res.sendFile("index.html", { root: __dirname });
+  res.sendFile(process.cwd() + "/index.html");
+  // res.sendFile("../index.html", { root: __dirname });
 });
 
 app.get("/me", function (req, res) {
