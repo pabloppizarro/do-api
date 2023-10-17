@@ -11,4 +11,6 @@ COPY --chown=node:node . .
 
 EXPOSE 3000
 
-CMD [ "node", "./server/index-ws.js" ]
+RUN npm install pm2 -g
+
+CMD [ "pm2-runtime", "./server/index-ws.js" ]
