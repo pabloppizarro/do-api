@@ -1,5 +1,8 @@
 import * as jsdom from "jsdom";
 const { JSDOM } = jsdom;
+
+import { remove$ } from "../utils.js";
+
 export default function getCronistaBlue() {
   const options = {
     referrer: process.env.CRONISTA_BLUE,
@@ -18,6 +21,6 @@ export default function getCronistaBlue() {
     let date = document.querySelector(".date a").textContent;
     date = date.split(" ").slice(1).join(" ");
     console.log("try", buy, sale);
-    return { buy, sale, percentaje, date };
+    return { buy: remove$(buy), sale: remove$(sale), percentaje, date };
   });
 }
