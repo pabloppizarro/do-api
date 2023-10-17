@@ -30,11 +30,13 @@ export async function getBlue(req, res) {
 
 export async function getBlueCronista(req, res) {
   const data = await getCronistaBlue();
-  console.log(data);
   res.json(data);
 }
 export async function getBlueDolarHoy(req, res) {
-  const data = await getDolarHoyBlue();
-  console.log(data);
+  const data = await getDolarHoyBlue(process.env.DOLAR_HOY_BLUE);
+  res.json(data);
+}
+export async function getOficialDolarHoy(req, res) {
+  const data = await getDolarHoyBlue(process.env.DOLAR_HOY_OFICIAL);
   res.json(data);
 }
