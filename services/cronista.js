@@ -1,7 +1,7 @@
 import * as jsdom from "jsdom";
 const { JSDOM } = jsdom;
 
-import { remove$ } from "../utils.js";
+import { remove$ } from "../utils/index.js";
 
 export default function getCronistaBlue() {
   const options = {

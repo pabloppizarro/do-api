@@ -1,5 +1,5 @@
 import * as jsdom from "jsdom";
-import { remove$ } from "../utils.js";
+import { remove$ } from "../utils/index.js";
 const { JSDOM } = jsdom;
 
 export default function getDolarHoyBlue(url) {
