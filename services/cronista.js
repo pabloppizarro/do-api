@@ -15,12 +15,11 @@ export default function getCronistaBlue() {
 
     const document = dom.window.document;
     const buy = document.querySelector(".buy-value").textContent;
-    const sale = document.querySelector(".sell-value").textContent;
+    const sell = document.querySelector(".sell-value").textContent;
     const percentaje =
       document.querySelectorAll(".percentage a span")[1].textContent;
     let date = document.querySelector(".date a").textContent;
     date = date.split(" ").slice(1).join(" ");
-    console.log("try", buy, sale);
-    return { buy: remove$(buy), sale: remove$(sale), percentaje, date };
+    return { buy: remove$(buy), sell: remove$(sell), percentaje, date };
   });
 }

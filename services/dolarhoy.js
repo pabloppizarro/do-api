@@ -14,10 +14,10 @@ export default function getDolarHoyBlue(url) {
 
     const document = dom.window.document;
     const buy = document.querySelectorAll(".value")[0].textContent;
-    const sale = document.querySelectorAll(".value")[1].textContent;
+    const sell = document.querySelectorAll(".value")[1].textContent;
     const percentaje = null;
     let date = document.querySelector(".update").textContent;
     date = date.split(" ").slice(2).join(" ");
-    return { buy: remove$(buy), sale: remove$(sale), percentaje, date };
+    return { buy: remove$(buy), sell: remove$(sell), percentaje, date };
   });
 }

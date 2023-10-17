@@ -12,7 +12,7 @@ export async function getOficial(req, res) {
 
   const output = {
     date: util.getLocalNowDate(),
-    sale: jsonData.cotiza.Dolar.casa344.compra._text,
+    sell: jsonData.cotiza.Dolar.casa344.compra._text,
     buy: jsonData.cotiza.Dolar.casa344.venta._text,
   };
   res.json(output);
@@ -22,7 +22,7 @@ export async function getBlue(req, res) {
 
   const output = {
     date: util.getLocalNowDate(),
-    sale: jsonData.cotiza.Dolar.casa380.compra._text,
+    sell: jsonData.cotiza.Dolar.casa380.compra._text,
     buy: jsonData.cotiza.Dolar.casa380.venta._text,
   };
   res.json(output);
