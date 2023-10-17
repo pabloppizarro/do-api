@@ -1,4 +1,6 @@
 import getDolarSiData from "../services/dolarSi.js";
+import getCronistaBlue from "../services/cronista.js";
+import getDolarHoyBlue from "../services/dolarhoy.js";
 import * as util from "../utils/index.js";
 
 export async function getAll(req, res) {
@@ -24,4 +26,15 @@ export async function getBlue(req, res) {
     buy: jsonData.cotiza.Dolar.casa380.venta._text,
   };
   res.json(output);
+}
+
+export async function getBlueCronista(req, res) {
+  const data = await getCronistaBlue();
+  console.log(data);
+  res.json(data);
+}
+export async function getBlueDolarHoy(req, res) {
+  const data = await getDolarHoyBlue();
+  console.log(data);
+  res.json(data);
 }

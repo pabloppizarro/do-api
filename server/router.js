@@ -1,10 +1,19 @@
 import { Router } from "express";
-import { getAll, getOficial } from "../handlers/dolar.js";
-
+import {
+  getAll,
+  getBlueCronista,
+  getBlueDolarHoy,
+  getOficial,
+} from "../handlers/dolar.js";
 const router = Router();
 
 router.get("/all", getAll);
 router.get("/oficial", getOficial);
+router.get("/blue-cronista", getBlueCronista);
+router.get("/blue-dolarhoy", getBlueDolarHoy);
 // router.get("/BLUE", getAll);
 
+function haltOnTimedout(req, res, next) {
+  if (!req.timeout) next();
+}
 export default router;
