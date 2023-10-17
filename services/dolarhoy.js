@@ -1,4 +1,5 @@
 import * as jsdom from "jsdom";
+import { remove$ } from "../utils.js";
 const { JSDOM } = jsdom;
 
 export default function getDolarHoyBlue(url) {
@@ -17,6 +18,6 @@ export default function getDolarHoyBlue(url) {
     const percentaje = null;
     let date = document.querySelector(".update").textContent;
     date = date.split(" ").slice(2).join(" ");
-    return { buy, sale, percentaje, date };
+    return { buy: remove$(buy), sale: remove$(sale), percentaje, date };
   });
 }
