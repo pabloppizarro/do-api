@@ -2,6 +2,7 @@ import getDolarSiData from "../services/dolarSi.js";
 import getCronistaBlue from "../services/cronista.js";
 import getDolarHoyBlue from "../services/dolarhoy.js";
 import * as util from "../utils/index.js";
+import getLanacionValues from "../services/laNacion.js";
 
 export async function getAll(req, res) {
   const jsonData = await getDolarSiData();
@@ -38,5 +39,10 @@ export async function getBlueDolarHoy(req, res) {
 }
 export async function getOficialDolarHoy(req, res) {
   const data = await getDolarHoyBlue(process.env.DOLAR_HOY_OFICIAL);
+  res.json(data);
+}
+
+export async function handleLaNacionValues(req, res) {
+  const data = await getLanacionValues(process.env.DOLAR_LANACION);
   res.json(data);
 }

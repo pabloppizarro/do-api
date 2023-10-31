@@ -6,6 +6,7 @@ export function formatARSCurrency(value) {
 }
 
 export function remove$(str) {
+  if (!str) return "";
   str = str.trim();
   if (str.startsWith("$")) {
     str = str.substring(1);
