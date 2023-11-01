@@ -37,12 +37,7 @@ app.listen(3000, function () {
 });
 
 process.on("SIGINT", () => {
-  //disconnect WS clients,
-  //shutdown DB.
-  // wss.clients.forEach((c) => {
-  //   c.close();
-  // });
-  // server.close(() => {
-  //   shutdownDB();
-  // });
+  console.log("\nGracefully shutting down from SIGINT (Ctrl-C)");
+  // some other closing procedures go here
+  process.exit(0);
 });
