@@ -13,13 +13,15 @@ export default function getDolarHoyBlue(url) {
     // console.log(dom.serialize());
 
     const document = dom.window.document;
+    const title = document.querySelector(".title").textContent;
     const buy = document.querySelectorAll(".value")[0].textContent;
     const sell = document.querySelectorAll(".value")[1].textContent;
     const percentaje = null;
     let date = document.querySelector(".update").textContent;
     date = date.split(" ").slice(2).join(" ");
     return {
-      house: "Dolar Hoy",
+      house: "Dólar Hoy",
+      title,
       buy: remove$(buy),
       sell: remove$(sell),
       percentaje,

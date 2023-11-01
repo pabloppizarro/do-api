@@ -22,6 +22,7 @@ export default function getCronistaBlue() {
     date = date.split(" ").slice(1).join(" ");
     return {
       house: "El Cronista",
+      title: "Dólar Blue",
       buy: remove$(buy),
       sell: remove$(sell),
       percentaje,
