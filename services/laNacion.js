@@ -16,16 +16,18 @@ export default function getLanacionValues(referrer) {
     const nodes = document.querySelectorAll(".currency-data");
 
     nodes.forEach((node) => {
-      node.querySelectorAll("strong");
-      console.log(JSON.stringify(currenciesNodes));
-      console.log("hola");
-      //   let value = {
-      //     title: node.querySelector("h2").innerText,
-      //     date: getLocalNowDate(),
-      //     buy: remove$(currencies[0]?.innerText),
-      //     sell: remove$(currencies[1]?.innerText),
-      //   };
-      //   output.push(value);
+      let value = {
+        title: node.querySelector("h2").textContent,
+        date: getLocalNowDate(),
+      };
+      const currenciesNodes = node.querySelectorAll("strong");
+      if (currenciesNodes.length > 1) {
+        value.buy = remove$(currenciesNodes.item(0).textContent);
+        value.sell = remove$(currenciesNodes.item(1).textContent);
+      } else {
+        value.sell = remove$(currenciesNodes.item(0).textContent);
+      }
+      output.push(value);
     });
     return output;
   });
