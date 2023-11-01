@@ -18,6 +18,12 @@ export default function getDolarHoyBlue(url) {
     const percentaje = null;
     let date = document.querySelector(".update").textContent;
     date = date.split(" ").slice(2).join(" ");
-    return { buy: remove$(buy), sell: remove$(sell), percentaje, date };
+    return {
+      house: "Dolar Hoy",
+      buy: remove$(buy),
+      sell: remove$(sell),
+      percentaje,
+      date,
+    };
   });
 }

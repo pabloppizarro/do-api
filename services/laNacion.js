@@ -17,6 +17,7 @@ export default function getLanacionValues(referrer) {
 
     nodes.forEach((node) => {
       let value = {
+        house: "La Nación",
         title: node.querySelector("h2").textContent,
         date: getLocalNowDate(),
       };

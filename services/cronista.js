@@ -20,6 +20,12 @@ export default function getCronistaBlue() {
       document.querySelectorAll(".percentage a span")[1].textContent;
     let date = document.querySelector(".date a").textContent;
     date = date.split(" ").slice(1).join(" ");
-    return { buy: remove$(buy), sell: remove$(sell), percentaje, date };
+    return {
+      house: "El Cronista",
+      buy: remove$(buy),
+      sell: remove$(sell),
+      percentaje,
+      date,
+    };
   });
 }
